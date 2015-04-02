@@ -1,45 +1,138 @@
 package se.radley.brewhub.io.beerxml.schema;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
+
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
-@XmlType(name = "WATER")
+@JsonRootName("WATER")
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Water {
 
-    @XmlElement(name = "NAME")
+    @JsonProperty("NAME")
     protected String name;
 
-    @XmlElement(name = "VERSION")
+    @JsonProperty("VERSION")
     protected int version;
 
-    @XmlElement(name = "NOTES")
+    @JsonProperty("NOTES")
     protected String notes;
 
-    @XmlElement(name = "AMOUNT")
+    @JsonProperty("AMOUNT")
     protected double amount;
 
-    @XmlElement(name = "PH")
+    @JsonProperty("PH")
     protected double ph;
 
-    @XmlElement(name = "CALCIUM")
+    @JsonProperty("CALCIUM")
     protected double calcium;
 
-    @XmlElement(name = "BICARBONATE")
+    @JsonProperty("BICARBONATE")
     protected double bicarbonate;
 
-    @XmlElement(name = "SULFATE")
+    @JsonProperty("SULFATE")
     protected double sulfate;
 
-    @XmlElement(name = "CHLORIDE")
+    @JsonProperty("CHLORIDE")
     protected double chloride;
 
-    @XmlElement(name = "SODIUM")
+    @JsonProperty("SODIUM")
     protected double sodium;
 
-    @XmlElement(name = "MAGNESIUM")
+    @JsonProperty("MAGNESIUM")
     protected double magnesium;
 
     // DISPLAY_AMOUNT
+
+	//<editor-fold desc="Getters and Setters">
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getVersion() {
+		return version;
+	}
+
+	public void setVersion(int version) {
+		this.version = version;
+	}
+
+	public String getNotes() {
+		return notes;
+	}
+
+	public void setNotes(String notes) {
+		this.notes = notes;
+	}
+
+	public double getAmount() {
+		return amount;
+	}
+
+	public void setAmount(double amount) {
+		this.amount = amount;
+	}
+
+	public double getPh() {
+		return ph;
+	}
+
+	public void setPh(double ph) {
+		this.ph = ph;
+	}
+
+	public double getCalcium() {
+		return calcium;
+	}
+
+	public void setCalcium(double calcium) {
+		this.calcium = calcium;
+	}
+
+	public double getBicarbonate() {
+		return bicarbonate;
+	}
+
+	public void setBicarbonate(double bicarbonate) {
+		this.bicarbonate = bicarbonate;
+	}
+
+	public double getSulfate() {
+		return sulfate;
+	}
+
+	public void setSulfate(double sulfate) {
+		this.sulfate = sulfate;
+	}
+
+	public double getChloride() {
+		return chloride;
+	}
+
+	public void setChloride(double chloride) {
+		this.chloride = chloride;
+	}
+
+	public double getSodium() {
+		return sodium;
+	}
+
+	public void setSodium(double sodium) {
+		this.sodium = sodium;
+	}
+
+	public double getMagnesium() {
+		return magnesium;
+	}
+
+	public void setMagnesium(double magnesium) {
+		this.magnesium = magnesium;
+	}
+	//</editor-fold>
 }

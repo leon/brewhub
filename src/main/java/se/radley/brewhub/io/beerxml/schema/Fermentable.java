@@ -1,66 +1,69 @@
 package se.radley.brewhub.io.beerxml.schema;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import se.radley.brewhub.io.StringBooleanJsonDeserializer;
 
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
-
-@XmlType(name = "FERMENTABLE")
+@JsonRootName("FERMENTABLE")
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Fermentable {
 
-    @XmlElement(name = "NAME")
+    @JsonProperty("NAME")
     protected String name;
 
-    @XmlElement(name = "VERSION")
+    @JsonProperty("VERSION")
     protected int version;
 
-    @XmlElement(name = "NOTES")
+    @JsonProperty("NOTES")
     protected String notes;
 
-    @XmlElement(name = "TYPE")
+    @JsonProperty("TYPE")
     protected String type;
 
-    @XmlElement(name = "AMOUNT")
+    @JsonProperty("AMOUNT")
     protected double amount;
 
-    @XmlElement(name = "YIELD")
+    @JsonProperty("YIELD")
     protected double yield;
 
-    @XmlElement(name = "COLOR")
+    @JsonProperty("COLOR")
     protected double color;
 
-    @XmlElement(name = "ADD_AFTER_BOIL")
+    @JsonProperty("ADD_AFTER_BOIL")
+	@JsonDeserialize(using = StringBooleanJsonDeserializer.class)
     protected boolean addAfterBoil;
 
-    @XmlElement(name = "ORIGIN")
+    @JsonProperty("ORIGIN")
     protected String origin;
 
-    @XmlElement(name = "SUPPLIER")
+    @JsonProperty("SUPPLIER")
     protected String supplier;
 
-    @XmlElement(name = "COARSE_FINE_DIFF")
+    @JsonProperty("COARSE_FINE_DIFF")
     protected double courseFineDiff;
 
-    @XmlElement(name = "MOISTURE")
+    @JsonProperty("MOISTURE")
     protected double moisture;
 
-    @XmlElement(name = "DIASTATIC_POWER")
+    @JsonProperty("DIASTATIC_POWER")
     protected double diastaticPower;
 
-    @XmlElement(name = "PROTEIN")
+    @JsonProperty("PROTEIN")
     protected double protein;
 
-    @XmlElement(name = "MAX_IN_BATCH")
+    @JsonProperty("MAX_IN_BATCH")
     protected double maxInBatch;
 
-    @XmlElement(name = "RECOMMEND_MASH")
+    @JsonProperty("RECOMMEND_MASH")
+	@JsonDeserialize(using = StringBooleanJsonDeserializer.class)
     protected boolean recommendMash;
 
-    @XmlElement(name = "IBU_GAL_PER_LB")
+    @JsonProperty("IBU_GAL_PER_LB")
     protected double ibuGalPerLB;
 
-    @XmlElement(name = "POTENTIAL")
+    @JsonProperty("POTENTIAL")
     protected double potential;
 
     // DISPLAY_AMOUNT
@@ -69,28 +72,149 @@ public class Fermentable {
     // EXTRACT_SUBSTITUTE
 
 
-    /*
-    <NAME>Maris Otter (Crisp)</NAME>
- <VERSION>1</VERSION>
- <TYPE>Grain</TYPE>
- <AMOUNT>9.9999936</AMOUNT>
- <YIELD>82.5000000</YIELD>
- <COLOR>5.5000001</COLOR>
- <ADD_AFTER_BOIL>FALSE</ADD_AFTER_BOIL>
- <ORIGIN>United Kingdom</ORIGIN>
- <SUPPLIER>MaltMagnus.se</SUPPLIER>
- <NOTES>Sorten Maris Otter &#228;r framodlad av Dr GDH Bell i Cambridge genom att korsa Proctor och Pioneer korn. Maris Otter har odlats f&#246;r m&#228;ltning mer &#228;n 45 &#229;r och dess stamtavla och meriter, levererar &#229;r efter &#229;r en konsekvent, bearbetbar och smakrik malt. Maris Otter anses vara Pale Ale maltens Rolls Royce.</NOTES>
- <COARSE_FINE_DIFF>1.5000000</COARSE_FINE_DIFF>
- <MOISTURE>2.8000000</MOISTURE>
- <DIASTATIC_POWER>50.0000000</DIASTATIC_POWER>
- <PROTEIN>11.7000000</PROTEIN>
- <MAX_IN_BATCH>100.0000000</MAX_IN_BATCH>
- <RECOMMEND_MASH>TRUE</RECOMMEND_MASH>
- <IBU_GAL_PER_LB>0.0000000</IBU_GAL_PER_LB>
- <DISPLAY_AMOUNT>10.00 kg</DISPLAY_AMOUNT>
- <INVENTORY>0.00 kg</INVENTORY>
- <POTENTIAL>1.0379500</POTENTIAL>
- <DISPLAY_COLOR>5.5 EBC</DISPLAY_COLOR>
- <EXTRACT_SUBSTITUTE>Pale Liquid Extract</EXTRACT_SUBSTITUTE>
-     */
+	//<editor-fold desc="Getters and Setters">
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getVersion() {
+		return version;
+	}
+
+	public void setVersion(int version) {
+		this.version = version;
+	}
+
+	public String getNotes() {
+		return notes;
+	}
+
+	public void setNotes(String notes) {
+		this.notes = notes;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public double getAmount() {
+		return amount;
+	}
+
+	public void setAmount(double amount) {
+		this.amount = amount;
+	}
+
+	public double getYield() {
+		return yield;
+	}
+
+	public void setYield(double yield) {
+		this.yield = yield;
+	}
+
+	public double getColor() {
+		return color;
+	}
+
+	public void setColor(double color) {
+		this.color = color;
+	}
+
+	public boolean isAddAfterBoil() {
+		return addAfterBoil;
+	}
+
+	public void setAddAfterBoil(boolean addAfterBoil) {
+		this.addAfterBoil = addAfterBoil;
+	}
+
+	public String getOrigin() {
+		return origin;
+	}
+
+	public void setOrigin(String origin) {
+		this.origin = origin;
+	}
+
+	public String getSupplier() {
+		return supplier;
+	}
+
+	public void setSupplier(String supplier) {
+		this.supplier = supplier;
+	}
+
+	public double getCourseFineDiff() {
+		return courseFineDiff;
+	}
+
+	public void setCourseFineDiff(double courseFineDiff) {
+		this.courseFineDiff = courseFineDiff;
+	}
+
+	public double getMoisture() {
+		return moisture;
+	}
+
+	public void setMoisture(double moisture) {
+		this.moisture = moisture;
+	}
+
+	public double getDiastaticPower() {
+		return diastaticPower;
+	}
+
+	public void setDiastaticPower(double diastaticPower) {
+		this.diastaticPower = diastaticPower;
+	}
+
+	public double getProtein() {
+		return protein;
+	}
+
+	public void setProtein(double protein) {
+		this.protein = protein;
+	}
+
+	public double getMaxInBatch() {
+		return maxInBatch;
+	}
+
+	public void setMaxInBatch(double maxInBatch) {
+		this.maxInBatch = maxInBatch;
+	}
+
+	public boolean isRecommendMash() {
+		return recommendMash;
+	}
+
+	public void setRecommendMash(boolean recommendMash) {
+		this.recommendMash = recommendMash;
+	}
+
+	public double getIbuGalPerLB() {
+		return ibuGalPerLB;
+	}
+
+	public void setIbuGalPerLB(double ibuGalPerLB) {
+		this.ibuGalPerLB = ibuGalPerLB;
+	}
+
+	public double getPotential() {
+		return potential;
+	}
+
+	public void setPotential(double potential) {
+		this.potential = potential;
+	}
+	//</editor-fold>
 }

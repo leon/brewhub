@@ -1,43 +1,119 @@
 package se.radley.brewhub.io.beerxml.schema;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import se.radley.brewhub.io.StringBooleanJsonDeserializer;
 
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
-
-@XmlType(name = "MISC")
+@JsonRootName("MISC")
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Misc {
 
-    @XmlElement(name = "NAME")
+    @JsonProperty("NAME")
     protected String name;
 
-    @XmlElement(name = "VERSION")
+    @JsonProperty("VERSION")
     protected int version;
 
-    @XmlElement(name = "NOTES")
+    @JsonProperty("NOTES")
     protected String notes;
 
-    @XmlElement(name = "TYPE")
+    @JsonProperty("TYPE")
     protected String type;
 
-    @XmlElement(name = "USE")
+    @JsonProperty("USE")
     protected String use;
 
-    @XmlElement(name = "USE_FOR")
+    @JsonProperty("USE_FOR")
     protected String useFor;
 
-    @XmlElement(name = "AMOUNT")
+    @JsonProperty("AMOUNT")
     protected double amount;
 
-    @XmlElement(name = "TIME")
+    @JsonProperty("TIME")
     protected double time;
 
-    @XmlElement(name = "AMOUNT_IS_WEIGHT")
-    protected double amountIsWeight;
+    @JsonProperty("AMOUNT_IS_WEIGHT")
+	@JsonDeserialize(using = StringBooleanJsonDeserializer.class)
+    protected boolean amountIsWeight;
 
     // DISPLAY_AMOUNT
     // INVENTORY
     // DISPLAY_TIME
     // BATCH_SIZE
+
+	//<editor-fold desc="Getters and Setters">
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getVersion() {
+		return version;
+	}
+
+	public void setVersion(int version) {
+		this.version = version;
+	}
+
+	public String getNotes() {
+		return notes;
+	}
+
+	public void setNotes(String notes) {
+		this.notes = notes;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public String getUse() {
+		return use;
+	}
+
+	public void setUse(String use) {
+		this.use = use;
+	}
+
+	public String getUseFor() {
+		return useFor;
+	}
+
+	public void setUseFor(String useFor) {
+		this.useFor = useFor;
+	}
+
+	public double getAmount() {
+		return amount;
+	}
+
+	public void setAmount(double amount) {
+		this.amount = amount;
+	}
+
+	public double getTime() {
+		return time;
+	}
+
+	public void setTime(double time) {
+		this.time = time;
+	}
+
+	public boolean getAmountIsWeight() {
+		return amountIsWeight;
+	}
+
+	public void setAmountIsWeight(boolean amountIsWeight) {
+		this.amountIsWeight = amountIsWeight;
+	}
+	//</editor-fold>
 }
